@@ -71,7 +71,7 @@ with tab1:
             else:
                 group_number = mark_attendance(selected_global_index, car_usage, start_location, end_location, car_number)
                 st.success("출석이 완료되었습니다. 감사합니다. : )")
-                st.info(f"🎉 {selected_person['사원이름']} CP님은 {group_number}조입니다. 강의장 메인 화면을 확인하시고, 자리에 앉아주세요. 명찰을 과정 중 꼭 패용해 주시기 바랍니다. 즐겁고 유익한 시간 되시기 바랍니다. : )")
+                st.info(f"🎉 {selected_person['사원이름']} CP님은 {group_number}조입니다.")
 
 with tab2:
     st.markdown("---")
