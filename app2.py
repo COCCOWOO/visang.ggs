@@ -55,8 +55,8 @@ if selected_person is not None:
     start_location = end_location = car_number = ""
 
     if car_usage == "Y":
-        start_location = st.text_input("출발지:")
-        end_location = st.text_input("도착지:")
+        start_location = st.text_input("출발지(예: 경기도 과천시):")
+        end_location = st.text_input("도착지(예: 경기도 용인시):")
         car_number = st.text_input("차량번호 (Full):")
 
     if st.button("CHECK-IN"):
