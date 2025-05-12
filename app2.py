@@ -49,7 +49,7 @@ if not filtered.empty:
 
 # 선택된 사람 있을 경우 추가 입력
 if selected_person is not None:
-    pw = st.text_input("비밀번호를 입력하세요:", type="password")
+    pw = st.text_input("오늘의 코드를 입력하세요:", type="password")
 
     car_usage = st.radio("자차를 이용하셨나요?", ["Y", "N"])
     start_location = end_location = car_number = ""
@@ -61,7 +61,7 @@ if selected_person is not None:
 
     if st.button("CHECK-IN"):
         if pw != "250513":
-            st.error("비밀번호가 틀렸습니다.")
+            st.error("오늘의 코드가 틀렸습니다.")
         elif not pd.isna(members_df.at[selected_global_index, "체크"]):
             st.warning("이미 출석이 완료된 사용자입니다.")
         else:
