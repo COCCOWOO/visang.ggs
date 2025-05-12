@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 
 MEMBER_FILE = "members.csv"
@@ -8,7 +8,8 @@ MEMBER_FILE = "members.csv"
 # 체크 열 업데이트 함수
 def mark_attendance(person_index, car_usage, start, end, car):
     df = pd.read_csv(MEMBER_FILE)
-    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    kst_now = datetime.utcnow() + timedelta(hours=9)
+    now = kst_now.strftime("%Y-%m-%d %H:%M")
     df.at[person_index, "체크"] = now
     df.at[person_index, "자차여부"] = car_usage
     df.at[person_index, "출발지"] = start
